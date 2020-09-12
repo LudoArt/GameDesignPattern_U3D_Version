@@ -4,11 +4,11 @@
 
 直接上图（感谢VS自带的查看类图工具）：
 
-![image-20200912174049174](H:\LudoArt.github.io\img\image-20200912174049174.png)
+![image-20200912174049174](https://raw.githubusercontent.com/LudoArt/TyporaPictureBed/master/image-20200912174049174.png)
 
 一个`Command`抽象类，有一个`Execute`方法，多个具体的指令类，执行相应的操作。
 
-![image-20200912174210400](H:\LudoArt.github.io\img\image-20200912174210400.png)
+![image-20200912174210400](https://raw.githubusercontent.com/LudoArt/TyporaPictureBed/master/image-20200912174210400.png)
 
 一个`CommandManager`，集中在`Update`中处理各个指令，只需要更改变量`LEFT`，`RIGHT`，`JUMP` 就可以实现自定义按键（实质是将输入与要做的事情用一个“指针”联系起来）。此外，在方法`Execute`中传入player作为参数，意味着可以通过修改传入的参数控制不同的物体，如玩家2，AI等。
 
