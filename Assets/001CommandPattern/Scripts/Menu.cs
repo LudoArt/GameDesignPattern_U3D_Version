@@ -32,9 +32,17 @@ public class Menu : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && !menuPanel.gameObject.activeSelf)
+        {
             menuPanel.gameObject.SetActive(true);
+            Subject.Instance.Notify(CustomEvent.OPENTITLE);
+        }
+            
         else if (Input.GetKeyDown(KeyCode.Escape) && menuPanel.gameObject.activeSelf)
+        {
             menuPanel.gameObject.SetActive(false);
+            Subject.Instance.Notify(CustomEvent.CLOSETITLE);
+        }
+            
     }
 
     private void OnGUI()
