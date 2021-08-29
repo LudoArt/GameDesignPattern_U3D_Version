@@ -13,6 +13,20 @@ public class SpawnerManager : MonoBehaviour
         GoblinSpawner = new SpawnerFor<Goblin>();
     }
 
+	// 测试用
+	private void Start()
+	{
+        InvokeRepeating(nameof(testSpawn), 1, 2);
+    }
+
+    private void testSpawn()
+	{
+        int type = Random.Range(0, 2);
+        int id = Random.Range(0, 100);
+
+        SpawnerMonster((MonsterType)type, id);
+    }
+
 	public void SpawnerMonster(MonsterType type, int id)
 	{
         switch(type)
